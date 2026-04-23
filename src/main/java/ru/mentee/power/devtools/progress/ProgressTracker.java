@@ -3,7 +3,7 @@ package ru.mentee.power.devtools.progress;
 public class ProgressTracker {
     public String calculateTotalProgress(Mentee[] mentees) {
         if (mentees == null || mentees.length == 0) {
-            throw new RuntimeException("Массив менторов не должен быть пустой");
+            throw new IllegalArgumentException("Массив менторов не должен быть пустой");
         }
 
         int totalCompleted = 0;

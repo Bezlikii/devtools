@@ -4,6 +4,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatException;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 @DisplayName("Тестирование ProgressTracker")
 public class ProgressLoopTest {
@@ -39,5 +41,23 @@ public class ProgressLoopTest {
         assertThat(result)
                 .contains("пройдено 24 из 24 уроков")
                 .contains("осталось 0 уроков");
+    }
+
+    @Test
+    @DisplayName("Должен выкинуть исключение, если пустой массив менти")
+    void shouldThrowException_whenNoMenteeFound() {
+        ProgressTracker tracker = new ProgressTracker();
+        Mentee[] mentees = {};
+
+        assertThatThrownBy(() -> tracker.calculateTotalProgress(mentees))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("пуст");
+    }
+
+    @Test
+    @DisplayName("Должен выкинуть IllegalArgumentException при некорректных данных completedLessons > totalLessons")
+    void shouldThrowException_whenIncorrectData() {
+        assertThatThrownBy(() -> new Mentee("Иван", "Москва", "Backend", 20, 12))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 }
