@@ -1,4 +1,4 @@
-name: Java CI: Ckeckstyle, JaCoCo, Build
+name: Java CI Ckeckstyle, JaCoCo, Build
 
 on:
   push:
