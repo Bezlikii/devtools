@@ -1,6 +1,10 @@
 package ru.mentee.power;
 
+import ru.mentee.power.common.Generated;
+
 public class ProgressDemo {
+
+  @Generated
   static void main(String[] args) {
     var progress = new MenteeProgress("Михаил", 2, 10);
 

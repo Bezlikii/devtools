@@ -9,7 +9,6 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 @DisplayName("Тестирование ProgressTracker")
 public class ProgressLoopTest {
 
-
   @Test
   @DisplayName("Должен корректно вычислить суммарный прогресс, когда передан массив mentee")
   void shouldCalculateTotalProgressWhenMultipleMentees() {
