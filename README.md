@@ -107,3 +107,5 @@
 Источник: https://google.github.io/styleguide/javaguide.html#s4.1.1-braces-always-used
 
 # CI-пайплайн настроен"
+
+[![Java CI Checkstyle, JaCoCo, Build](https://github.com/Bezlikii/devtools/actions/workflows/ci.yml/badge.svg)](https://github.com/Bezlikii/devtools/actions/workflows/ci.yml)
