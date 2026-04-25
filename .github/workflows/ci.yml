@@ -1,49 +1,43 @@
-name: Java CI Ckeckstyle, JaCoCo, Build
+name: Java CI Checkstyle, JaCoCo, Build
 
 on:
   push:
     branches:
       - master
       - 'feature/**'
-    pull_request:
-      - branches:
-        - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout clone repo
-    uses: actions/checkout@v4
-    
-    - name: Gradle Warapper chmod
-    run: chmod +x gradlew
+    steps:
+      - name: Checkout clone repo
+        uses: actions/checkout@v4
 
-    - name: JDK 25 Temurin
-    uses: actions/setup-java@v4
-    with:
-      distribution: 'temurin'
-      java-version: '25'
-      cache: 'gradle'
+      - name: Gradle Wrapper chmod
+        run: chmod +x gradlew
 
-    - name: Checkstyle run
-    run: ./gradlew --no-daemon checkstyleMain
+      - name: JDK 25 Temurin
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '25'
+          cache: 'gradle'
 
-    - name: Tests run
-    run: ./gradlew --no-daemon test
+      - name: Checkstyle run
+        run: ./gradlew --no-daemon checkstyleMain
 
-    - name: JaCoCo report
-    run: ./gradlew --no-daemon jacocoTestReport
+      - name: Tests run
+        run: ./gradlew --no-daemon test
 
-    -name: JaCoCo test coverage verification
-    run: ./gradlew --no-daemon jacocoTestCoverageVerification
+      - name: JaCoCo report
+        run: ./gradlew --no-daemon jacocoTestReport
 
-    - name: Build project
-    run: ./gradlew --no-daemon build
+      - name: JaCoCo test coverage verification
+        run: ./gradlew --no-daemon jacocoTestCoverageVerification
 
-    
-
-    
-
-    
+      - name: Build project
+        run: ./gradlew --no-daemon build
