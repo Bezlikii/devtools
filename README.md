@@ -1,6 +1,4 @@
-Quick Start
-
-## Урок DVT-2
+# Урок DVT-2
 
 Пакет `ru.mentee.power` нужен для области видимости. Чтобы мы знали какие классы в каких папках лежат + чтобы классы с одинаковым именем не конфликтовали между собой.
 
@@ -13,7 +11,7 @@ Quick Start
 - `int sprintNumber` — номер спринта
 - `int plannedHoursPerWeek` — количество часов на спринт
 
-## Git Урок DVT-3
+# Git Урок DVT-3
 
 Правила веток:
 - `master` — основная ветка, оставляем чистой
@@ -27,7 +25,7 @@ Quick Start
 5. `git branch` — создать ветку
 6. `git log` — посмотреть историю
 
-## Сценарий ручной проверки DVT-6
+# Сценарий ручной проверки DVT-6
 
 ### Запуск приложения
 1. Откройте `Gradle Tool Window` (`View` → `Tool Windows` → `Gradle`)
@@ -107,3 +105,7 @@ Quick Start
 Почему: скобки обязательны даже для однострочных блоков.
 
 Источник: https://google.github.io/styleguide/javaguide.html#s4.1.1-braces-always-used
+
+# CI-пайплайн настроен"
+
+[![Java CI Checkstyle, JaCoCo, Build](https://github.com/Bezlikii/devtools/actions/workflows/ci.yml/badge.svg)](https://github.com/Bezlikii/devtools/actions/workflows/ci.yml)
