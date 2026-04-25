@@ -1,5 +1,7 @@
 package ru.mentee.power.devtools.progress;
 
+import ru.mentee.power.common.Generated;
+
 public class ProgressTracker {
   public String calculateTotalProgress(Mentee[] mentees) {
     if (mentees == null || mentees.length == 0) {
@@ -22,6 +24,7 @@ public class ProgressTracker {
         + " уроков, осталось " + totalRemaining + " уроков";
   }
 
+  @Generated
   public static void main(String[] args) {
     ProgressTracker tracker = new ProgressTracker();
 
