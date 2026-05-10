@@ -12,12 +12,6 @@ public class ProgressTracker {
     int totalTotal = 0;
     int index = 0;
 
-//    while (index < mentees.length) {
-//      totalCompleted += mentees[index].completedLessons();
-//      totalTotal += mentees[index].totalLessons();
-//      index++;
-//    }
-
     while (index < mentees.length) {
       totalCompleted += mentees[index].completedLessons();
       totalTotal += mentees[index].totalLessons();
@@ -39,7 +33,7 @@ public class ProgressTracker {
         new Mentee("Мария", "Санкт-Петербург", "Fullstack", 8, 12),
         new Mentee("Петр", "Казань", "Java Backend", 12, 12)
     };
-    System.out.println("Debug: started");
+
     String progress = tracker.calculateTotalProgress(mentees);
     System.out.println(progress);
   }
