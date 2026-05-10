@@ -6,6 +6,7 @@ public record Mentee(String name,
                      int completedLessons,
                      int totalLessons
 ) {
+  // TODO
   public Mentee {
     if (completedLessons < 0 || totalLessons <= 0 || completedLessons > totalLessons) {
       throw new IllegalArgumentException("Некорректные значения прогресса");
